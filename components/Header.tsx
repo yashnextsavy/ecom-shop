@@ -7,16 +7,7 @@ import { PackageIcon, TrolleyIcon } from "@sanity/icons";
 
 const Header = () => {
   const user = useUser();
-  // console.log(user);
 
-  const createClerkPasskey = async () => {
-    try {
-      const response = await user?.user?.createPasskey();
-      // console.log(response);
-    } catch (error) {
-      console.log("Error", JSON.stringify(error, null, 2));
-    }
-  }
 
   return (
     <header className="flex flex-wrap justify-between items-center px-6 py-3 border-b-1 border-green-900">
@@ -55,15 +46,6 @@ const Header = () => {
             ) : (
               <SignInButton mode="modal" />
             )}
-
-            {/* {user?.user?.passkeys.length === 0 && (
-                  <button
-                  onClick={createClerkPasskey}
-                  className="bg-white hover:bg-green-700 hover:text-white text-green-700 font-bold py-2 px-4 rounded border-green-700 cursor-pointer border"
-                >
-                Create passkey
-              </button>
-               )} */}
           </ClerkLoaded>
         </div>
       </div>
