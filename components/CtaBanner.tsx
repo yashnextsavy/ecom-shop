@@ -1,11 +1,6 @@
 import { COUPON_CODES } from "@/sanity/lib/sales/couponCodes";
 import { getActiveSaleByCouponCode } from "@/sanity/lib/sales/getActiveSaleByCouponCode";
-import imageUrlBuilder from "@sanity/image-url";
-import { client } from "@/sanity/lib/client";
-
-// Function to get Sanity image URL
-const builder = imageUrlBuilder(client);
-const urlFor = (source: any) => source ? builder.image(source).url() : "";
+import { imageUrl } from "@/lib/imageUrl";
 
 async function CtaBanner() {
     const sale = await getActiveSaleByCouponCode(COUPON_CODES.LASTCHANCE);
@@ -18,7 +13,7 @@ async function CtaBanner() {
 
     // Check if sale has an image, else fallback to gradient
     const backgroundImage = sale.saleImage
-        ? `url('${urlFor(sale.saleImage)}')`
+        ? `url('${imageUrl(sale.saleImage)}')`
         : "linear-gradient(to right, #064e3b, black)"; // Green-900 to black gradient
 
     return (
