@@ -1,9 +1,9 @@
-import { Products } from "@/sanity.types";
+import { ProductType } from "@/sanity.types";
 import { AnimatePresence } from "motion/react"
 import * as motion from "motion/react-client"
 import ProductThumb from "./ProductThumb";
 
-function ProductGrid({ products }: { products: Products[] }) {
+function ProductGrid({ products }: { products: ProductType[] }) {
 
     // console.log("ProductGrid", products)
     return (

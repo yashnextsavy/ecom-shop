@@ -5,7 +5,6 @@ import {
 import "../globals.css";
 import Header from "@/components/Header";
 import { SanityLive } from "@/sanity/lib/live";
-import CtaBanner from "@/components/CtaBanner";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -21,10 +20,9 @@ export default function RootLayout({
         <ClerkProvider dynamic>
             <html lang="en">
                 <body>
-                    <main>
+                    <main className="bg-gray-100">
                         <Header />
-                        <div className="bg-gray-100 py-8">
-                            <CtaBanner />
+                        <div className="py-8">
                             {children}
                         </div>
                     </main>

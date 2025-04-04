@@ -5,8 +5,6 @@ import { imageUrl } from "@/lib/imageUrl";
 async function CtaBanner() {
     const sale = await getActiveSaleByCouponCode(COUPON_CODES.LASTCHANCE);
 
-    console.log(sale);
-
     if (!sale?.isActive) {
         return null;
     }
